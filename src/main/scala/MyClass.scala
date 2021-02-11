@@ -26,7 +26,9 @@ class MyClass extends /*Logging*/ {
   println("spark started")
 
   val log: Logger = Logger.getLogger("logger")
-  log.fatal("111")
+  log.info("")
+  log.info("111")
+  log.info("")
 
   spark.stop
   println("spark shutdowned")
