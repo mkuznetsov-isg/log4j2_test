@@ -21,14 +21,19 @@ object MyObj extends App {
 
   val mc = new MyClass
   mc.doStuff()
+  println()
 
+  // *
   mc.doStuffWithLevel(Level.ALL)
+  // *
   mc.doStuffWithLevel(Level.DEBUG)
   mc.doStuffWithLevel(Level.ERROR)
   mc.doStuffWithLevel(Level.FATAL)
   mc.doStuffWithLevel(Level.INFO)
+  // *
   mc.doStuffWithLevel(Level.TRACE)
   mc.doStuffWithLevel(Level.WARN)
+  println()
 
   mc.doStuffWithUser(new User("mike"))
 
