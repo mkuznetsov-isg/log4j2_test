@@ -4,10 +4,9 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
 
-
 class User(val name: String)
 
-class MyClass extends /*Logging*/ {
+class MyClass /*extends Logging*/ {
 
 //  def doStuff(): Unit =
 //    logger.info("Doing stuff")
@@ -21,7 +20,7 @@ class MyClass extends /*Logging*/ {
   val spark: SparkSession = SparkSession
     .builder
     .appName("embedded log4j test")
-    .master("local[*]")
+//    .master("local[*]")
     .getOrCreate()
   println("spark started")
 
@@ -35,6 +34,8 @@ class MyClass extends /*Logging*/ {
 
 
 }
+
+// ./spark-submit --class MyObj /home/mike/_repos/log4j_test/target/scala-2.11/log4j_test_2.11-0.1.jar
 
 object MyObj extends App {
 
