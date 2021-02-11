@@ -1,10 +1,9 @@
-import org.apache.logging.log4j.scala.{Logger, Logging}
+import org.apache.logging.log4j.scala.Logging
 import org.apache.logging.log4j.Level
 
 class User(val name: String)
 
 class MyClass extends Logging {
-
 
   def doStuff(): Unit =
     logger.info("Doing stuff")
