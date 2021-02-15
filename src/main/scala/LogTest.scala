@@ -7,13 +7,13 @@ import ot.dispatcher.sdk.core.SimpleQuery
 
 class LogTest(sq: SimpleQuery, utils: PluginUtils) extends PluginCommand(sq, utils) with SparkSessionWrapper {
   override def transform(_df: DataFrame): DataFrame = {
+    log.debug("________________________________________")
     log.info("________________________________________")
     log.error("________________________________________")
     log.fatal("________________________________________")
-    log.debug("________________________________________")
 
     import spark.implicits._
 
-    Seq(1, 2, 3).toDF("some_numbers")
+    Seq(1, 2, 3).toDF("numbers")
   }
 }

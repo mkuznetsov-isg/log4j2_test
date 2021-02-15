@@ -2,7 +2,7 @@
 //import org.apache.logging.log4j.Level
 
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 class User(val name: String)
 
@@ -20,14 +20,20 @@ class MyClass /*extends Logging*/ {
   val spark: SparkSession = SparkSession
     .builder
     .appName("embedded log4j test")
-//    .master("local[*]")
+    .master("local[*]")
     .getOrCreate()
+
   println("spark started")
 
   val log: Logger = Logger.getLogger("logger")
   log.info("")
   log.info("111")
   log.info("")
+
+  import spark.implicits._
+
+  val df: DataFrame = Seq(1, 2, 3).toDF("value")
+  df.show
 
   spark.stop
   println("spark shutdowned")
